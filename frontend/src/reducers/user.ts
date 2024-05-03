@@ -8,6 +8,8 @@ const initialState: User = {
   name: '',
   lastname: '',
   isAdmin: false,
+  isLimitedToCreate: false,
+  maxKeyAvalible: 0,
   keys: [],
 };
 

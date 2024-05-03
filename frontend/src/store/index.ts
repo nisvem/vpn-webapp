@@ -12,7 +12,7 @@ const isReduxDevtoolsExtenstionExist = (
 };
 
 const store = createStore(
-  combineReducers({ user }),
+  combineReducers(user),
   isReduxDevtoolsExtenstionExist(window)
     ? window.__REDUX_DEVTOOLS_EXTENSION__()
     : undefined

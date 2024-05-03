@@ -1,9 +1,8 @@
-import { Suspense, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 import { useHttp } from '../../hooks/http.hook';
 
-import { Store, User } from '../../types';
+import { User } from '../../types';
 import Spiner from '../Spiner/Spiner';
 import Error from '../Error/Error';
 

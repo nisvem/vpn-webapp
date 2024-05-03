@@ -1,6 +1,6 @@
 import { useEffect, Children } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setUser } from '../../actions/user';
 
 import {
@@ -15,12 +15,12 @@ import Error from '../Error/Error';
 import { useHttp } from '../../hooks/http.hook';
 
 function TelegramWrapper({ children }: { children: JSX.Element }) {
-  // const isReady = useIsTelegramWebAppReady();
-  // const tgApp = useTelegramWebApp();
+  const isReady = useIsTelegramWebAppReady();
+  const tgApp = useTelegramWebApp();
 
   const dispatch = useDispatch();
 
-  const isReady = true;
+  // const isReady = true;
   const { request, process, errorText, loading } = useHttp();
 
   const initFunction = async (tgApp: TelegramWebAppModel['app']) => {
@@ -45,18 +45,18 @@ function TelegramWrapper({ children }: { children: JSX.Element }) {
   };
 
   useEffect(() => {
-    // isReady ? initFunction(tgApp) : null;
-    isReady
-      ? initFunction({
-          user: {
-            telegramId: 683299990,
-            username: 'nisvem',
-            name: 'Artem',
-            surname: '',
-            phone: '',
-          },
-        })
-      : null;
+    isReady ? initFunction(tgApp) : null;
+    // isReady
+    //   ? initFunction({
+    //       user: {
+    //         telegramId: 683299990,
+    //         username: 'nisvem',
+    //         name: 'Artem',
+    //         surname: '',
+    //         phone: '',
+    //       },
+    //     })
+    //   : null;
   }, [isReady]);
 
   return process !== 'error' ? (

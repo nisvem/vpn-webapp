@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Layout from '../../pages/Layout';
-import AdminIndex from '../../pages/AdminIndex';
 import KeysListPage from '../../pages/KeysListPage';
 import KeyPage from '../../pages/KeyPage';
 import CreateKeyPage from '../../pages/CreateKeyPage';
